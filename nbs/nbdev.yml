@@ -1,0 +1,9 @@
+project:
+  output-dir: _docs
+
+website:
+  title: "Fractal-LLM-Course"
+  site-url: "https://enzokro.github.io/Fractal-LLM-Course"
+  description: "Fractal-U course on LLMs"
+  repo-branch: main
+  repo-url: "https://github.com/enzokro/Fractal-LLM-Course"
