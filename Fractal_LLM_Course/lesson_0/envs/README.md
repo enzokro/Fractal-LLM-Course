@@ -18,11 +18,13 @@ mamba activate llm_base
 python -m pip install -r requirements.txt  
 
 # install the pytorch library
-python -m pip install -r reqs_torch.txt
+python -m pip install -r reqs_torch_cpu.txt
 ```  
 
 The first line installs the "helper" libraries that will make our lives easier.  
 The secondd line isntalls the `pytorch` library, which we'll use to load and use the actual LLMs.  
+
+> Note: On the cloud, you would install the `reqs_torch.txt` which uses the GPU.  
 
 Eventually, to speed up the LLMs, we will also need the following libraries:  
 ```bash
@@ -31,8 +33,6 @@ python -m pip install -r reqs_optim.txt
 ```   
 
 But these libraries can be tricky to install. Don't worry if you run into issues, we will revist them later.  
-
-
 
 
 Resources:  
