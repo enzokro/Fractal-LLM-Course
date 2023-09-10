@@ -1,0 +1,4 @@
+name: llm_base
+dependencies:
+  - python=3.11
+  - pip

@@ -1,0 +1,4 @@
+deepspeed
+flash-attn
+bitsandbytes
+nvidia-ml-py3

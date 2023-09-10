@@ -1,0 +1,11 @@
+jupyterlab
+nbdev
+fastcore
+matplotlib
+setuptools-rust
+transformers
+accelerate
+optimum
+datasets
+tiktoken
+diffusers
