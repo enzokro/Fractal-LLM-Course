@@ -13,10 +13,4 @@ pip install Fractal_LLM_Course
 
 ## How to use
 
-Fill me in please! Don’t forget code examples:
-
-``` python
-1+1
-```
-
-    2
+There is a folder for each lesson inside `Fractal_LLM_Course/`.
