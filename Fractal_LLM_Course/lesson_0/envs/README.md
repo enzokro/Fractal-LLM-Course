@@ -21,6 +21,8 @@ python -m pip install -r requirements.txt
 python -m pip install -r reqs_torch_cpu.txt
 ```  
 
+- MANAGING THE CUDA DRIVERS RESOURCE  
+
 The first line installs the "helper" libraries that will make our lives easier.  
 The secondd line isntalls the `pytorch` library, which we'll use to load and use the actual LLMs.  
 
