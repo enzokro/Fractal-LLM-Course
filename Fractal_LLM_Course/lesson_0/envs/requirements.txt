@@ -9,3 +9,6 @@ optimum
 datasets
 tiktoken
 diffusers
+xformers
+bitsandbytes
+scipy
