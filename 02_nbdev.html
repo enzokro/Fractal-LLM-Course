@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Running a Large Language Model using the HuggingFace Transformers API.">
 
-<title>Fractal-LLM-Course - Environment setups</title>
+<title>Fractal-LLM-Course - Publishing blog posts directly from Notebooks</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -97,12 +96,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="Fractal-LLM-Course - Environment setups">
-<meta property="og:description" content="Running a Large Language Model using the HuggingFace Transformers API.">
+<meta property="og:title" content="Fractal-LLM-Course - Publishing blog posts directly from Notebooks">
+<meta property="og:description" content="">
+<meta property="og:image" content="https://enzokro.github.io/Fractal-LLM-Course/02_nbdev_files/figure-html/66b3e06d-1-image.png">
 <meta property="og:site-name" content="Fractal-LLM-Course">
-<meta name="twitter:title" content="Fractal-LLM-Course - Environment setups">
-<meta name="twitter:description" content="Running a Large Language Model using the HuggingFace Transformers API.">
-<meta name="twitter:card" content="summary">
+<meta property="og:image:height" content="962">
+<meta property="og:image:width" content="1590">
+<meta name="twitter:title" content="Fractal-LLM-Course - Publishing blog posts directly from Notebooks">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="https://enzokro.github.io/Fractal-LLM-Course/02_nbdev_files/figure-html/66b3e06d-1-image.png">
+<meta name="twitter:image-height" content="962">
+<meta name="twitter:image-width" content="1590">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-sidebar floating nav-fixed">
@@ -126,7 +131,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./setup.html">Environment setups</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Publishing blog posts directly from Notebooks</li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -136,28 +141,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Fractal LLMs Course</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./setup.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Environment setups</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./first_runs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Environment setups</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
 </nav>
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
@@ -166,16 +149,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
-  <ul class="collapse">
-  <li><a href="#things-we-need-for-the-class" id="toc-things-we-need-for-the-class" class="nav-link" data-scroll-target="#things-we-need-for-the-class">Things we need for the class</a></li>
-  <li><a href="#organizing-what-we-need" id="toc-organizing-what-we-need" class="nav-link" data-scroll-target="#organizing-what-we-need">Organizing what we need</a></li>
-  </ul></li>
-  <li><a href="#installing-mamba-on-our-computers" id="toc-installing-mamba-on-our-computers" class="nav-link" data-scroll-target="#installing-mamba-on-our-computers">Installing <code>mamba</code> on our computers</a>
-  <ul class="collapse">
-  <li><a href="#mac-installation" id="toc-mac-installation" class="nav-link" data-scroll-target="#mac-installation">Mac Installation</a></li>
-  <li><a href="#creating-the-environment" id="toc-creating-the-environment" class="nav-link" data-scroll-target="#creating-the-environment">Creating the environment</a></li>
-  </ul></li>
+  <li><a href="#goals" id="toc-goals" class="nav-link active" data-scroll-target="#goals">Goals:</a></li>
+  <li><a href="#publishing-directly-from-a-notebook" id="toc-publishing-directly-from-a-notebook" class="nav-link" data-scroll-target="#publishing-directly-from-a-notebook">Publishing directly from a Notebook</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/enzokro/Fractal-LLM-Course/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -184,14 +159,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Environment setups</h1>
+<h1 class="title">Publishing blog posts directly from Notebooks</h1>
 </div>
 
-<div>
-  <div class="description">
-    Running a Large Language Model using the HuggingFace <code>Transformers</code> API.
-  </div>
-</div>
 
 
 <div class="quarto-title-meta">
@@ -204,76 +174,109 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<!-- WARNING: THIS FILE WAS AUTOGENERATED! DO NOT EDIT! -->
-<section id="introduction" class="level1">
-<h1>Introduction</h1>
-<p>The goal of this course is to build an AI Agent by fine-tuning a Large Language Model (LLM) on documents chosen by each student. What exactly do we mean by Agent, and why would we focus on a simple one?</p>
-<p>To give some context, there is a lot of talk and hype around Agents at the moment. Folks are looking towards a future where we all have personalized AI assistants, aka Agents, at our fingertips. These Agents will make our lives better both in the day to day and in the long term. They are the AI assistants of Science Fiction made material. Agents like TARS from Interstellar, Jarvis from Iron Man, HAL 9000 from Space Odyssey, Samantha from Her, etc.</p>
-<p>For as fast as the progress in AI and LLMs has been, Agents as powerful as those are still a ways off. It’s hard if not impossible to predict the exact timelines. Suffice it to say that these Agents won’t be here anytime “soon”. But, barring some force majeure, they <em>will</em> exist at some point.</p>
-<p>The gap, then, is that folks are talking about (and promising) these advanced Agent capabilities, while on the ground we are still dealing with LLM hallucinations and prohibitive compute requirements.</p>
-<p>Where does that leave us? Well, as <a href="https://twitter.com/gdb/status/1694107518488981868">a recent announcement from OpenAI</a> shows, fine-tuning GPT-3.5 on small, clean datasets can even surpass GPT-4 on certain tasks. <em>That’s</em> what we are aiming for. In other words, we already have the ability to develop outrageously powerful tools by fine-tuning LLMs on small, clean datasets.</p>
-<p>So we won’t build a simple chatbot, nor will we be build Iron Man’s Jarvis. We will land somewhere in the middle. If it helps, try thinking about this simple Agent as an Intelligent Rubber Duck. In case you’re not familiar with the concept: a Rubber Duck is anything (actual yellow rubber duckie optional) that you keep around your desk and talk to about your work. It is a physical tool for thought, since it’s so often helpful to say out loud the swarm of thoughts in our head.</p>
-<p>Our simple Agent will be a Rubber Duck that speaks back at you. When you ask it a question about your work, it will respond given what it knows about the project as a whole. Or, if you are simply verbalizing a thought to untangle it, the Agent will give you some feedback or suggest other approaches. If we can be so bold: our Agent will be a Jarvis-lite, laser-focused on a narrow scope. Then, as both the tools and tech progresses, we’ll have everything needed to unlock even more capabilities from our Intelligent Rubber Duck.</p>
+<section id="goals" class="level2">
+<h2 class="anchored" data-anchor-id="goals">Goals:</h2>
+<ul>
+<li>Publish your first blog post.<br>
+</li>
+<li>Create a full, proper python library for the custom Sentiment Analysis pipeline from last time.</li>
+</ul>
+</section>
+<section id="publishing-directly-from-a-notebook" class="level1">
+<h1>Publishing directly from a Notebook</h1>
 <blockquote class="blockquote">
-<p>Summary: In this course we will fine-tune an LLM on a small, clean dataset of our choosing to build an Intelligent Rubber Duck that can help us work or create better.</p>
+<p>Reference: <a href="https://nbdev.fast.ai/tutorials/blogging.html">blogging with nbdev.</a></p>
 </blockquote>
-<section id="things-we-need-for-the-class" class="level2">
-<h2 class="anchored" data-anchor-id="things-we-need-for-the-class">Things we need for the class</h2>
-<p>In order to fully use a current, open source LLM, the first thing we need to do is set up a proper <code>programming environment</code>. The environment is a computing ecosystem with all the software libraries and packages needed to run an LLM.</p>
-<p>Note that setting up this environment is often one of the most time-consuming and challenging tasks when it comes to Machine Learning. There is no silver bullet or universal solution, as you will see by the dozens of tools that folks have come up with to tackle this problem (insert xkcd comic about competing standards).</p>
-<p>The main point here is that setting up the environment is often annoying. It can even be straight up painful. It’s ok to feel lost or struggle with it. Please take some comfort in the fact that once we have the environment, many of the downstream tasks will feel easy by comparison!</p>
-<p>So what makes building this environment so challenging? And why do we need it in the first place?</p>
-<section id="silent-failures-in-ai-models" class="level4">
-<h4 class="anchored" data-anchor-id="silent-failures-in-ai-models">Silent Failures in AI Models</h4>
-<p>LLMs, and Machine Learning models more generally, often fail in different ways than other, standard software fails. For instance, classic bugs in regular software include: type mismatches, syntax errors, compilation errors, etc. In other words failures that clearly stem from a <em>wrong</em> operation (aka a bug) that snuck into the code. We wanted the computer to do <code>X</code>, but we told it by accident to do <code>Y</code> instead.</p>
-<p>In contrast, ML models often have “silent” failures. There is no syntax or compilation error - the program still runs and completes fine. But, there is <em>something</em> wrong in the code: adding where we should have subtracted, grabbing the wrong element from a list, or using the wrong mathematical function. There is no type checker or compiler that would (or even could, for now) catch these errors.</p>
-<p>The fix for the silent failures above is clear:<br>
-- Carefully inspecting the code.<br>
-- Monitoring and validating its outputs.<br>
-- Clarity in both the algorithms and models we are using.</p>
-<p>There is another, unfortunate kind of silent failure: <code>version</code> mismatches. Version failures happen when we use a different version of a programming library than the version originally used by the model. As the software libraries we rely on are frequently updated, both subtle and major changes in their internals can affect the output of a model. These failures are unfortunately immune to our careful logical checks.</p>
-<p>Avoiding these silent failures is the main reason for being consistent and disciplined with our model’s programming environment. A good environment setup keeps us focused on the important, conceptual part of our model instead of getting bogged down in managing software versions.</p>
-</section>
-<section id="looking-forward-with-our-environment" class="level4">
-<h4 class="anchored" data-anchor-id="looking-forward-with-our-environment">Looking forward with our environment</h4>
-<p>There is a nice benefit to spending this much time and effort up front on our environment.</p>
-<p>We will not only have a specialized environment to run and fine-tune a single LLM. We’ll have a springboard and setup to keep up with the state of the art in the field. A setup to bring in groundbreaking improvements as they are released. And to weave in the latest and greatest models. The LLM world is our oyster, and the base environment the grain of sand soon-to-be pearls.</p>
-</section>
-</section>
-<section id="organizing-what-we-need" class="level2">
-<h2 class="anchored" data-anchor-id="organizing-what-we-need">Organizing what we need</h2>
-<p>The <code>mamba</code> package manager will handle the python version. Why Mamba? To start it is way fast and better than Anaconda, and it makes it easier to install OS and system-level packages we need outside of python.</p>
-<p>We will use <code>pip</code> to install the actual python packages. Note that we could use mamba for this as well, but a few of the libraries need custom pip options to install.</p>
-<blockquote class="blockquote">
-<p>Note: Run <code>pip install -e .</code> to install a dynamic version of this package that tracks live code changes.</p>
-</blockquote>
-</section>
-</section>
-<section id="installing-mamba-on-our-computers" class="level1">
-<h1>Installing <code>mamba</code> on our computers</h1>
-<p>Follow the steps in the <a href="https://github.com/conda-forge/miniforge#install">official install instructions</a>.</p>
-<section id="mac-installation" class="level2">
-<h2 class="anchored" data-anchor-id="mac-installation">Mac Installation</h2>
-<p>First find the name of your architecture. We then use it to pick the right install script for each Mac.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># check your mac's architecture</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="va">arch</span><span class="op">=</span><span class="va">$(</span><span class="fu">uname</span><span class="va">)</span> </span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">$arch</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># download the appropriate installation script</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-L</span> <span class="at">-O</span> <span class="st">"https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-</span><span class="va">$(</span><span class="fu">uname</span><span class="va">)</span><span class="st">-</span><span class="va">$(</span><span class="fu">uname</span> <span class="at">-m</span><span class="va">)</span><span class="st">.sh"</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># run the Mambaforge installer</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> Mambaforge-<span class="va">$(</span><span class="fu">uname</span><span class="va">)</span>-<span class="va">$(</span><span class="fu">uname</span> <span class="at">-m</span><span class="va">)</span>.sh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>If you prefer to download the file directly, grab it from here:</p>
-<p>https://github.com/conda-forge/miniforge/releases/</p>
-</section>
-<section id="creating-the-environment" class="level2">
-<h2 class="anchored" data-anchor-id="creating-the-environment">Creating the environment</h2>
-<p>After installing Mamba, head to the Lesson 0 here: <code>Fractal_LLM_Course/lesson_0/envs</code>. The <code>README.md</code> in that folder has the full instructions to build the mamba environment.</p>
+<p><code>nbdev</code> leverages an amazing tool called <a href="https://quarto.org/">Quarto</a>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="02_nbdev_files/figure-html/66b3e06d-1-image.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">image.png</figcaption>
+</figure>
+</div>
+<p>Here we take a closer look at the <code>nbdev</code> library. <code>nbdev</code> is a powerful tool based on two key ideas:<br>
+- Literate programming. - Exploratory programming.</p>
+<p>In Literate Programming, descriptions (documentation) are woven directly into a project’s source code.<br>
+This is opposite of how most codebases are set up, where documentation exists as a separate set of files.</p>
+<p>How is this different from parsing source code and comments into documentation? In Literate Programming the code, tests, and documentation are all first-class citizens. And with <code>nbdev</code>, the Notebook is the single source of truth for all of these. Think about what this truly means, and just how much overhead work it removes.</p>
+<p>Instead of having to independently manage code, docs, and tests, everything can be done in Notebooks. If the notebook runs, you know your code will run. And you can directly document and test your code in the notebook as you develop.</p>
+<p>Exploratory programming is, as the name suggests, an open-ended approach to coding when exploring unknown domains or areas. Folks often use it at the start of a project, when the requirements or scope are not yet flushed out.</p>
+<p>Try things out, figure out how they work, what they do. Poke around. Explore. Follow that curiosity. Have fun! Can always restart the Notebook, no fear around trying things - very little to no downside.</p>
+<p><code>nbdev</code> combines these two ideas. We can then mix and match them in different doses as needed.</p>
+<p>This notebook will turn our previous, first runs into a proper python library.<br>
+It will have documentation and tests directly in the notebook.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>load_ext autoreload</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>autoreload <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>::: {.cell 0=‘e’ 1=‘x’ 2=‘p’ 3=‘o’ 4=‘r’ 5=‘t’}</p>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> transformers <span class="im">import</span> AutoConfig</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> transformers <span class="im">import</span> AutoTokenizer</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> transformers <span class="im">import</span> AutoModelForSequenceClassification</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>:::</p>
+<p>::: {.cell 0=‘e’ 1=‘x’ 2=‘p’ 3=‘o’ 4=‘r’ 5=‘t’}</p>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> SentimentPipeline:</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, model_name):</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">        Sentiment Analysis pipeline.</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">        """</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.model_name <span class="op">=</span> model_name</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.config <span class="op">=</span> AutoConfig.from_pretrained(<span class="va">self</span>.model_name)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.tokenizer <span class="op">=</span> AutoTokenizer.from_pretrained(<span class="va">self</span>.model_name)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.model <span class="op">=</span> AutoModelForSequenceClassification.from_pretrained(<span class="va">self</span>.model_name)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> preprocess(<span class="va">self</span>, text: <span class="bu">str</span>):</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co">        Sends `text` through the LLM's tokenizer.  </span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co">        The tokenizers turns words and characters into special inputs for the LLM.</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co">        """</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>        tokenized_inputs <span class="op">=</span> <span class="va">self</span>.tokenizer(text, return_tensors<span class="op">=</span><span class="st">'pt'</span>)</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> tokenized_inputs</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> forward(<span class="va">self</span>, text: <span class="bu">str</span>):</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="co">        First we preprocess the `text` into tokens.</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="co">        Then we send the `token_inputs` to the model.</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="co">        """</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>        token_inputs <span class="op">=</span> <span class="va">self</span>.preprocess(text)</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>        outputs <span class="op">=</span> <span class="va">self</span>.model(<span class="op">**</span>token_inputs)</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> outputs</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> process_outputs(<span class="va">self</span>, outs):</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""</span></span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a><span class="co">        Here is where HuggingFace does the most for us via `pipeline`.  </span></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a><span class="co">        """</span></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>        <span class="co"># grab the raw "scores" that from the model for Positive and Negative labels</span></span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>        logits <span class="op">=</span> outs.logits</span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>        <span class="co"># find the strongest label score, aka the model's decision</span></span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>        pred_idx <span class="op">=</span> logits.argmax(<span class="dv">1</span>).item()</span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>        <span class="co"># use the `config` object to find the class label</span></span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>        pred_label <span class="op">=</span> <span class="va">self</span>.config.id2label[pred_idx]  </span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>        <span class="co"># calculate the human-readable number for the score</span></span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>        pred_score <span class="op">=</span> logits.softmax(<span class="op">-</span><span class="dv">1</span>)[:, pred_idx].item()</span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> {</span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>            <span class="st">'label'</span>: pred_label,</span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a>            <span class="st">'score'</span>: pred_score, </span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__call__</span>(<span class="va">self</span>, text: <span class="bu">str</span>):</span>
+<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a>        model_outs <span class="op">=</span> <span class="va">self</span>.forward(text)</span>
+<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a>        preds <span class="op">=</span> <span class="va">self</span>.process_outputs(model_outs)</span>
+<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> preds</span>
+<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__repr__</span>(<span class="va">self</span>):</span>
+<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f"SentimentAnalysis_</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>model_name<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>:::</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

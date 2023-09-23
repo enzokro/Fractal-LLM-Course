@@ -1,15 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://enzokro.github.io/Fractal-LLM-Course/setup.html</loc>
-    <lastmod>2023-09-14T05:18:17.316Z</lastmod>
-  </url>
-  <url>
-    <loc>https://enzokro.github.io/Fractal-LLM-Course/first_runs.html</loc>
-    <lastmod>2023-09-14T05:18:15.380Z</lastmod>
-  </url>
-  <url>
     <loc>https://enzokro.github.io/Fractal-LLM-Course/index.html</loc>
-    <lastmod>2023-09-14T05:18:16.564Z</lastmod>
+    <lastmod>2023-09-23T21:33:47.225Z</lastmod>
+  </url>
+  <url>
+    <loc>https://enzokro.github.io/Fractal-LLM-Course/blog/index.html</loc>
+    <lastmod>2023-09-23T21:33:46.525Z</lastmod>
+  </url>
+  <url>
+    <loc>https://enzokro.github.io/Fractal-LLM-Course/01_first_runs.html</loc>
+    <lastmod>2023-09-23T21:33:46.091Z</lastmod>
+  </url>
+  <url>
+    <loc>https://enzokro.github.io/Fractal-LLM-Course/02_nbdev.html</loc>
+    <lastmod>2023-09-23T21:33:45.764Z</lastmod>
+  </url>
+  <url>
+    <loc>https://enzokro.github.io/Fractal-LLM-Course/00_setup.html</loc>
+    <lastmod>2023-09-23T21:33:46.853Z</lastmod>
   </url>
 </urlset>
