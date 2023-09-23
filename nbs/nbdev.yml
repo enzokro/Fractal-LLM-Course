@@ -7,3 +7,9 @@ website:
   description: "Fractal-U course on LLMs"
   repo-branch: main
   repo-url: "https://github.com/enzokro/Fractal-LLM-Course"
+  navbar:
+    background: primary
+    search: true
+    left:
+      - text: "Blog"
+        href: blog/index.qmd
