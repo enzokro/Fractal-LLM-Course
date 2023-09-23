@@ -1,0 +1,12 @@
+---
+title: Fractal-U LLM Blog
+subtitle: Posts and notes for the Fractal-U LLM Course
+listing:
+  sort: "date desc"
+  contents: "posts"
+  sort-ui: false
+  filter-ui: false
+  categories: true
+  feed: true
+page-layout: full
+---

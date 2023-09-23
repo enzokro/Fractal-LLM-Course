@@ -1,0 +1,9 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  navbar:
+    left:
+      - text: "Blog"
+        href: blog/index.qmd
