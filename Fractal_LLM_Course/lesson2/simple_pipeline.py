@@ -3,14 +3,17 @@
 # %% auto 0
 __all__ = ['SentimentPipeline']
 
-# %% ../../nbs/02_nbdev.ipynb 4
+# %% ../../nbs/02_nbdev.ipynb 37
+# cell where we import the pieces of our pipeline.
 from transformers import AutoConfig
 from transformers import AutoTokenizer
 from transformers import AutoModelForSequenceClassification
 
-# %% ../../nbs/02_nbdev.ipynb 5
+# %% ../../nbs/02_nbdev.ipynb 40
 class SentimentPipeline:
-    """Docstring for good practice. Hello, class!"""
+    """
+    Docstring, inserted on the fly!
+    """
     def __init__(self, model_name):
         """
         Sentiment Analysis pipeline.

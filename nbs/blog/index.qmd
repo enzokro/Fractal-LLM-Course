@@ -1,6 +1,6 @@
 ---
 title: Fractal-U LLM Blog
-subtitle: Posts and notes for the Fractal-U LLM Course
+subtitle: Posts and notes for the course
 listing:
   sort: "date desc"
   contents: "posts"
