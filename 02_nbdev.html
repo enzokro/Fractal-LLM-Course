@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Fractal-LLM-Course - Publishing blog posts directly from Notebooks</title>
+<title>Fractal-LLM-Course - nbdev for Blogging and Building Python Libraries</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -96,17 +96,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="Fractal-LLM-Course - Publishing blog posts directly from Notebooks">
+<meta property="og:title" content="Fractal-LLM-Course - nbdev for Blogging and Building Python Libraries">
 <meta property="og:description" content="">
-<meta property="og:image" content="https://enzokro.github.io/Fractal-LLM-Course/02_nbdev_files/figure-html/86d87a78-1-image.png">
+<meta property="og:image" content="https://enzokro.github.io/Fractal-LLM-Course/imgs/quarto.png">
 <meta property="og:site-name" content="Fractal-LLM-Course">
-<meta property="og:image:height" content="962">
-<meta property="og:image:width" content="1590">
-<meta name="twitter:title" content="Fractal-LLM-Course - Publishing blog posts directly from Notebooks">
+<meta property="og:image:height" content="812">
+<meta property="og:image:width" content="1534">
+<meta name="twitter:title" content="Fractal-LLM-Course - nbdev for Blogging and Building Python Libraries">
 <meta name="twitter:description" content="">
-<meta name="twitter:image" content="https://enzokro.github.io/Fractal-LLM-Course/02_nbdev_files/figure-html/86d87a78-1-image.png">
-<meta name="twitter:image-height" content="962">
-<meta name="twitter:image-width" content="1590">
+<meta name="twitter:image" content="https://enzokro.github.io/Fractal-LLM-Course/imgs/quarto.png">
+<meta name="twitter:image-height" content="812">
+<meta name="twitter:image-width" content="1534">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -142,7 +142,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Publishing blog posts directly from Notebooks</li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><code>nbdev</code> for Blogging and Building Python Libraries</li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -161,7 +161,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#goals" id="toc-goals" class="nav-link active" data-scroll-target="#goals">Goals:</a></li>
-  <li><a href="#publishing-directly-from-a-notebook" id="toc-publishing-directly-from-a-notebook" class="nav-link" data-scroll-target="#publishing-directly-from-a-notebook">Publishing directly from a Notebook</a></li>
+  <li><a href="#intro" id="toc-intro" class="nav-link" data-scroll-target="#intro">Intro:</a>
+  <ul class="collapse">
+  <li><a href="#literate-programming" id="toc-literate-programming" class="nav-link" data-scroll-target="#literate-programming">Literate Programming</a></li>
+  <li><a href="#exploratory-programming" id="toc-exploratory-programming" class="nav-link" data-scroll-target="#exploratory-programming">Exploratory Programming</a></li>
+  <li><a href="#combining-literate-and-exploratory-programming" id="toc-combining-literate-and-exploratory-programming" class="nav-link" data-scroll-target="#combining-literate-and-exploratory-programming">Combining Literate and Exploratory Programming</a></li>
+  </ul></li>
+  <li><a href="#turning-notebooks-into-blog-posts" id="toc-turning-notebooks-into-blog-posts" class="nav-link" data-scroll-target="#turning-notebooks-into-blog-posts">Turning Notebooks into Blog Posts</a>
+  <ul class="collapse">
+  <li><a href="#high-level-steps" id="toc-high-level-steps" class="nav-link" data-scroll-target="#high-level-steps">High-Level Steps:</a></li>
+  <li><a href="#creating-a-new-nbdev-project" id="toc-creating-a-new-nbdev-project" class="nav-link" data-scroll-target="#creating-a-new-nbdev-project">Creating a new <code>nbdev</code> project</a></li>
+  <li><a href="#adding-quarto-to-the-mix" id="toc-adding-quarto-to-the-mix" class="nav-link" data-scroll-target="#adding-quarto-to-the-mix">Adding Quarto to the Mix</a></li>
+  <li><a href="#exporting-the-library" id="toc-exporting-the-library" class="nav-link" data-scroll-target="#exporting-the-library">Exporting the library</a></li>
+  </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/enzokro/Fractal-LLM-Course/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -170,7 +183,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Publishing blog posts directly from Notebooks</h1>
+<h1 class="title"><code>nbdev</code> for Blogging and Building Python Libraries</h1>
 </div>
 
 
@@ -188,104 +201,260 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="goals" class="level2">
 <h2 class="anchored" data-anchor-id="goals">Goals:</h2>
 <ul>
-<li>Publish your first blog post.<br>
+<li>Create a blog and publish our first post.<br>
 </li>
-<li>Create a full, proper python library for the custom Sentiment Analysis pipeline from last time.</li>
+<li>Build a custom, dynamic python library for the Sentiment Analysis pipeline in <code>01_first_runs.ipynb</code>.</li>
 </ul>
 </section>
-<section id="publishing-directly-from-a-notebook" class="level1">
-<h1>Publishing directly from a Notebook</h1>
+<section id="intro" class="level2">
+<h2 class="anchored" data-anchor-id="intro">Intro:</h2>
+<p>This Notebook takes a closer look at the <code>nbdev</code> library. <code>nbdev</code> is a powerful tool built around two key ideas:<br>
+- <a href="">Literate Programming</a>. - <a href="">Exploratory Programming</a>.</p>
+<p>The next sections give an overview of these topics, and why their combination is useful for us.</p>
+<section id="literate-programming" class="level3">
+<h3 class="anchored" data-anchor-id="literate-programming">Literate Programming</h3>
+<p>In Literate Programming, descriptions (documentation) are woven directly into a project’s source code. This is opposite from most codebases where documentation lives in a separate set of files. It also goes beyond tools like <a href="https://www.sphinx-doc.org/en/master/">sphinx</a> that instead parse comments and docstrings into documentation.</p>
+<p>Code, tests, and documentation are all first-class citizens in Literate Programming. In <code>nbdev</code> a Notebook is the single, unified source for all three things. Instead of having to independently manage code, docs, and tests, everything happens in the Notebook. If the Notebook runs then you know your code will run. The tight integration between what you’re doing (code), describing what you’re doing (documentation), and making sure it’s correct (tests) is a great approach for both research and thinking in general.</p>
+</section>
+<section id="exploratory-programming" class="level3">
+<h3 class="anchored" data-anchor-id="exploratory-programming">Exploratory Programming</h3>
+<p>Exploratory Programming is an open-ended approach for new problems and unknown domains. It’s very helpful at the start of a project before its scope or requirements are fully flushed out.</p>
+<p>The interactive and dynamic nature of Notebooks is ideal for Exploratory Programming. It makes the barrier to try new things extremely low. And it’s fun! Jupyter also has many extra tools to inspect code and debug its outputs.</p>
+</section>
+<section id="combining-literate-and-exploratory-programming" class="level3">
+<h3 class="anchored" data-anchor-id="combining-literate-and-exploratory-programming">Combining Literate and Exploratory Programming</h3>
+<p><code>nbdev</code>’s main workflow combines these two ideas. It’s a great combo for trying things out, figuring out what they do, and how they work. We can poke around and explore codebases in a much more interactive way than usual. Iterations are fast and cheap so it’s easy to follow any hit of curiosity. And if anything breaks, we can always restart the Notebook and try again!</p>
+<p>We can also mix and match these ideas as needed. For example at the start of a project, while finding our footing, we might lean Exploratory. Then as the idea matures, we could lean Literate to refine and crystallize our approach.</p>
+<p>Now for our first goal: creating and publishing a blog post.</p>
+</section>
+</section>
+<section id="turning-notebooks-into-blog-posts" class="level2">
+<h2 class="anchored" data-anchor-id="turning-notebooks-into-blog-posts">Turning Notebooks into Blog Posts</h2>
+<p>First, a high-level summary of the steps to create the blog.</p>
+<section id="high-level-steps" class="level3">
+<h3 class="anchored" data-anchor-id="high-level-steps">High-Level Steps:</h3>
+<ol type="1">
+<li>Create a new nbdev project.<br>
+</li>
+<li>Set up the minimum requirements for an nbdev blog.<br>
+</li>
+<li>Publish the blog to Github pages.</li>
+</ol>
 <blockquote class="blockquote">
-<p>Reference: <a href="https://nbdev.fast.ai/tutorials/blogging.html">blogging with nbdev.</a></p>
+<p>NOTE: This section is based on these two references: - <a href="https://nbdev.fast.ai/tutorials/tutorial.html#installation">Official nbdev tutorial.</a> - <a href="https://nbdev.fast.ai/tutorials/blogging.html">Blogging with nbdev.</a></p>
 </blockquote>
-<p><code>nbdev</code> leverages an amazing tool called <a href="https://quarto.org/">Quarto</a>.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="02_nbdev_files/figure-html/86d87a78-1-image.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">image.png</figcaption>
-</figure>
+<p><code>nbdev</code> leverages an amazing tool called <a href="https://quarto.org/">Quarto</a> for blogging. Quarto is a publishing framework tailored to scientific and technical articles and posts. In a way it’s a blogging platform for Literate Programming, where a series of code cells tell a story and take the reader on a journey.</p>
+<p><img src="imgs/quarto.png" class="img-fluid"></p>
+</section>
+<section id="creating-a-new-nbdev-project" class="level3">
+<h3 class="anchored" data-anchor-id="creating-a-new-nbdev-project">Creating a new <code>nbdev</code> project</h3>
+<p><code>nbdev</code> works on top of a Git repo, so the step is creating an empty git repository. Here is a handy <a href="https://github.com/new">Github link</a> that takes you straight to the page for creating new repos.</p>
+<blockquote class="blockquote">
+<p>Note: We need a completely empty repo, so don’t include a <code>.gitignore</code> or <code>README.md</code>.</p>
+</blockquote>
+<p>In this example the empty repo is called <code>sample_blog</code>, but feel free to call it anything you’d like. We’re not married to this name either, we can always create new repos with different, better names.</p>
+<p>Next, clone this repo to your computer. Make sure to change the github link below to point to your repo instead.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># clone the repo to your computer</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/enzokro/sample_blog.git <span class="co"># &lt;-- ! link with your repo here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Now we can move into this empty repo and let <code>nbdev</code> work its initialization magic. Run the <code>nbdev_new</code> command to get started. It will prompt you for some general info like as a short description about your project.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># move into the new repo and initialize the nbdev project</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> sample_blog/</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">nbdev_new</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>All of the options and configs for your project are found in the <code>settings.ini</code> file. <code>nbdev</code> looks in this file for any info it needs for its commands.</p>
+<p>When <code>nbdev_new</code> finishes running, you will have a new <code>nbdev</code> project! Try running a <code>git status</code> command to see everything that was added.</p>
+<p>We can now commit and push these changes to Github.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add, commit, and push the files created by nbdev</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span><span class="st">'Initial nbdev project creation'</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>As we mentioned earlier, <code>nbdev</code> leverages Quarto for publishing Notebooks. The next steps are turning this nbdev project into a proper Quarto blog.</p>
+</section>
+<section id="adding-quarto-to-the-mix" class="level3">
+<h3 class="anchored" data-anchor-id="adding-quarto-to-the-mix">Adding Quarto to the Mix</h3>
+<p>Start by activating the virtual environment:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># acivate the environment</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">mamba</span> activate llm_base</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><code>nbdev</code> includes a way to install Quarto using the <code>nbdev_install_quarto</code> command. Go ahead and run it, but note that it will ask you for administrator privileges.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install quarto</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">nbdev_install_quarto</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You may need to refresh the terminal session before it can find the <code>quarto</code> commands. To be safe, open up a new terminal and re-activate the environment. Then the command below will check if Quarto was installed successfully.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># shows us where quarto is installed</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">which</span> quarto </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Note that the <code>nbs/</code> folder usually holds the Notebooks that become a project’s documentation, tests, and source code. To make sure Quarto can publish an <code>nbdev</code> blog we have to add some files and change this directory structure a bit.</p>
+<p>First let’s take a look at what the new blog-ready <code>nbs/</code> folder will look like.</p>
+<p><strong>Minimal Quarto blog folder structure</strong>:</p>
+<pre><code>sample_blog
+└───nbs/
+│   │   _quarto.yml
+│   │   index.ipynb
+│   └───blog/
+│       │   index.qmd
+│       └───posts/
+│           └───2023-09-24-first-post/     
+│               │   index.ipynb</code></pre>
+<p>You’ll notice that <code>nbdev</code> already added the <code>_quarto.yml</code> file. The main change we are making is adding a <code>blog/</code> folder to the <code>nbs/</code> directory. This directory has an <code>index.qmd</code> file that tells Quarto about our blog. Here’s an example <code>index.qmd</code> file that describes our blog and how its posts should be listed:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> Example Blog</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> Publishing with Quarto and nbdev</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">listing</span><span class="kw">:</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">sort</span><span class="kw">:</span><span class="at"> </span><span class="st">"date desc"</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">contents</span><span class="kw">:</span><span class="at"> </span><span class="st">"posts"</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">sort-ui</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">filter-ui</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">categories</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">feed</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="fu">page-layout</span><span class="kw">:</span><span class="at"> full</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="at">Each post gets its own folder and a matching `index.ipynb` Notebook with the actual post's content. Eventually we can add photos, videos, and any other media that enhances the post.</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="at">Next, we will leverage [Github Pages](https://pages.github.com/) to build and host our site for free. The screenshot below shows the settings we need on the Github site for our repo to be published as a blog. Concretely, we need to  `Deploy from a branch` and pick the `gh-pages` branch.</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a><span class="at">![image.png](02_nbdev_files/figure-html/a334332f-1-image.png)</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a><span class="at">And that's all there is to it! We can now publish our first post. [Click here]() for a live link to this Notebook turned into a blog post. </span></span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a><span class="fu">Now we've seen how `nbdev` lets us quickly create and setup a blog. Next we'll look at another one of its great capabilities</span><span class="kw">:</span><span class="at"> building a fully fledged python library.</span></span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a><span class="co">## Creating python libraries with `nbdev`</span></span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a><span class="at">`nbdev` has a set of helper commands that convert Notebooks into complete python libraries.  </span></span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a><span class="at">These helper commands are called `directives` and usually go at the start of a code cell. They start with the special `</span><span class="co">#|` string which is similar to the shebang `#!` you may have seen in other scripts. These directive tell `nbdev` how to parse the code cell and what to do with it.</span></span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a><span class="fu">For example, the `default_exp` directive tells `nbdev` what to name an output python file. We use it below to name this specific python file as `lesson_2/simple_pipeline.py`</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a><span class="at">After we've named our soon-to-be python file, the `</span><span class="co">#| export` directive will parse and extract any python code cell we attach to it.</span></span>
+<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a><span class="at">:</span><span class="fu">:</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="at">.cell 0=</span><span class="st">'e'</span><span class="at"> 1=</span><span class="st">'x'</span><span class="at"> 2=</span><span class="st">'p'</span><span class="at"> 3=</span><span class="st">'o'</span><span class="at"> 4=</span><span class="st">'r'</span><span class="at"> 5=</span><span class="st">'t'</span><span class="at"> execution_count=2</span><span class="kw">}</span></span>
+<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a><span class="at">``` {.python .cell-code}</span></span>
+<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a><span class="co"># importing the pieces for the pipeline</span></span>
+<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a><span class="at">from transformers import AutoConfig</span></span>
+<span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a><span class="at">from transformers import AutoTokenizer</span></span>
+<span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a><span class="at">from transformers import AutoModelForSequenceClassification</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>/Users/cck/mambaforge/envs/llm_base/lib/python3.11/site-packages/tqdm/auto.py:21: TqdmWarning: IProgress not found. Please update jupyter and ipywidgets. See https://ipywidgets.readthedocs.io/en/stable/user_install.html
+  from .autonotebook import tqdm as notebook_tqdm</code></pre>
 </div>
-<p>Here we take a closer look at the <code>nbdev</code> library. <code>nbdev</code> is a powerful tool based on two key ideas:<br>
-- Literate programming. - Exploratory programming.</p>
-<p>In Literate Programming, descriptions (documentation) are woven directly into a project’s source code.<br>
-This is opposite of how most codebases are set up, where documentation exists as a separate set of files.</p>
-<p>How is this different from parsing source code and comments into documentation? In Literate Programming the code, tests, and documentation are all first-class citizens. And with <code>nbdev</code>, the Notebook is the single source of truth for all of these. Think about what this truly means, and just how much overhead work it removes.</p>
-<p>Instead of having to independently manage code, docs, and tests, everything can be done in Notebooks. If the notebook runs, you know your code will run. And you can directly document and test your code in the notebook as you develop.</p>
-<p>Exploratory programming is, as the name suggests, an open-ended approach to coding when exploring unknown domains or areas. Folks often use it at the start of a project, when the requirements or scope are not yet flushed out.</p>
-<p>Try things out, figure out how they work, what they do. Poke around. Explore. Follow that curiosity. Have fun! Can always restart the Notebook, no fear around trying things - very little to no downside.</p>
-<p><code>nbdev</code> combines these two ideas. We can then mix and match them in different doses as needed.</p>
-<p>This notebook will turn our previous, first runs into a proper python library.<br>
-It will have documentation and tests directly in the notebook.</p>
+<p>:::</p>
+<blockquote class="blockquote">
+<p>A small annoyance: <code>import</code> statements have to be in their own code cell. We can’t pair them with function calls like <code>print()</code>, for example.</p>
+</blockquote>
+<p>Next, we refactor the code from the previous notebook (<code>01_first_run.ipynb</code>) into a simple class.</p>
+<p>::: {.cell 0=‘e’ 1=‘x’ 2=‘p’ 3=‘o’ 4=‘r’ 5=‘t’ execution_count=6}</p>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> SentimentPipeline:</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, model_name):</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co">        Sentiment Analysis pipeline.</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co">        """</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.model_name <span class="op">=</span> model_name</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.config <span class="op">=</span> AutoConfig.from_pretrained(<span class="va">self</span>.model_name)</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.tokenizer <span class="op">=</span> AutoTokenizer.from_pretrained(<span class="va">self</span>.model_name)</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.model <span class="op">=</span> AutoModelForSequenceClassification.from_pretrained(<span class="va">self</span>.model_name)</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> preprocess(<span class="va">self</span>, text: <span class="bu">str</span>):</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a><span class="co">        Sends `text` through the LLM's tokenizer.  </span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a><span class="co">        The tokenizer turns words and characters into special inputs for the LLM.</span></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a><span class="co">        """</span></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>        tokenized_inputs <span class="op">=</span> <span class="va">self</span>.tokenizer(text, return_tensors<span class="op">=</span><span class="st">'pt'</span>)</span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> tokenized_inputs</span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> forward(<span class="va">self</span>, text: <span class="bu">str</span>):</span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""</span></span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a><span class="co">        First we preprocess the `text` into tokens.</span></span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a><span class="co">        Then we send the `token_inputs` to the model.</span></span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a><span class="co">        """</span></span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>        token_inputs <span class="op">=</span> <span class="va">self</span>.preprocess(text)</span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a>        outputs <span class="op">=</span> <span class="va">self</span>.model(<span class="op">**</span>token_inputs)</span>
+<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> outputs</span>
+<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> process_outputs(<span class="va">self</span>, outs):</span>
+<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""</span></span>
+<span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a><span class="co">        Here we mimic the post-processing that HuggingFace automatically does in its `pipeline`.  </span></span>
+<span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a><span class="co">        """</span></span>
+<span id="cb10-35"><a href="#cb10-35" aria-hidden="true" tabindex="-1"></a>        <span class="co"># grab the raw scores from the model for Positive and Negative labels</span></span>
+<span id="cb10-36"><a href="#cb10-36" aria-hidden="true" tabindex="-1"></a>        logits <span class="op">=</span> outs.logits</span>
+<span id="cb10-37"><a href="#cb10-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-38"><a href="#cb10-38" aria-hidden="true" tabindex="-1"></a>        <span class="co"># find the strongest label score, aka the model's decision</span></span>
+<span id="cb10-39"><a href="#cb10-39" aria-hidden="true" tabindex="-1"></a>        pred_idx <span class="op">=</span> logits.argmax(<span class="dv">1</span>).item()</span>
+<span id="cb10-40"><a href="#cb10-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-41"><a href="#cb10-41" aria-hidden="true" tabindex="-1"></a>        <span class="co"># use the `config` object to find the actual class label</span></span>
+<span id="cb10-42"><a href="#cb10-42" aria-hidden="true" tabindex="-1"></a>        pred_label <span class="op">=</span> <span class="va">self</span>.config.id2label[pred_idx]  </span>
+<span id="cb10-43"><a href="#cb10-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-44"><a href="#cb10-44" aria-hidden="true" tabindex="-1"></a>        <span class="co"># calculate the human-readable probability score for this class</span></span>
+<span id="cb10-45"><a href="#cb10-45" aria-hidden="true" tabindex="-1"></a>        pred_score <span class="op">=</span> logits.softmax(<span class="op">-</span><span class="dv">1</span>)[:, pred_idx].item()</span>
+<span id="cb10-46"><a href="#cb10-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-47"><a href="#cb10-47" aria-hidden="true" tabindex="-1"></a>        <span class="co"># return the predicted label and its score</span></span>
+<span id="cb10-48"><a href="#cb10-48" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> {</span>
+<span id="cb10-49"><a href="#cb10-49" aria-hidden="true" tabindex="-1"></a>            <span class="st">'label'</span>: pred_label,</span>
+<span id="cb10-50"><a href="#cb10-50" aria-hidden="true" tabindex="-1"></a>            <span class="st">'score'</span>: pred_score, </span>
+<span id="cb10-51"><a href="#cb10-51" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb10-52"><a href="#cb10-52" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb10-53"><a href="#cb10-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-54"><a href="#cb10-54" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__call__</span>(<span class="va">self</span>, text: <span class="bu">str</span>):</span>
+<span id="cb10-55"><a href="#cb10-55" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""</span></span>
+<span id="cb10-56"><a href="#cb10-56" aria-hidden="true" tabindex="-1"></a><span class="co">        Overriding the call method to easily and intuitively call the pipeline.</span></span>
+<span id="cb10-57"><a href="#cb10-57" aria-hidden="true" tabindex="-1"></a><span class="co">        """</span></span>
+<span id="cb10-58"><a href="#cb10-58" aria-hidden="true" tabindex="-1"></a>        model_outs <span class="op">=</span> <span class="va">self</span>.forward(text)</span>
+<span id="cb10-59"><a href="#cb10-59" aria-hidden="true" tabindex="-1"></a>        preds <span class="op">=</span> <span class="va">self</span>.process_outputs(model_outs)</span>
+<span id="cb10-60"><a href="#cb10-60" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> preds</span>
+<span id="cb10-61"><a href="#cb10-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-62"><a href="#cb10-62" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb10-63"><a href="#cb10-63" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__repr__</span>(<span class="va">self</span>):</span>
+<span id="cb10-64"><a href="#cb10-64" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""</span></span>
+<span id="cb10-65"><a href="#cb10-65" aria-hidden="true" tabindex="-1"></a><span class="co">        Cleaner representation of the pipeline.</span></span>
+<span id="cb10-66"><a href="#cb10-66" aria-hidden="true" tabindex="-1"></a><span class="co">        """</span></span>
+<span id="cb10-67"><a href="#cb10-67" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f"SentimentAnalysis_</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>model_name<span class="sc">}</span><span class="ss">"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>:::</p>
+<p>Let’s now make sure that <code>SentimentPipeline</code> actually works, since live tests are one of the main benefits of Notebook coding! Note that since we don’t put an <code>|# export</code> directive in the cell below, it won’t be part of the exported python file either.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>load_ext autoreload</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>autoreload <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># testing the pipeline</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># loading the default model</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>model_name <span class="op">=</span> <span class="st">'distilbert-base-uncased-finetuned-sst-2-english'</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>classifier <span class="op">=</span> SentimentPipeline(model_name) </span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co"># make sure that the official HuggingFace example works as expected</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> classifier(<span class="st">"We are very happy to show you the 🤗 Transformers library."</span>)<span class="op">;</span> results</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> results[<span class="st">'label'</span>] <span class="op">==</span> <span class="st">'POSITIVE'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>::: {.cell 0=‘e’ 1=‘x’ 2=‘p’ 3=‘o’ 4=‘r’ 5=‘t’}</p>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> transformers <span class="im">import</span> AutoConfig</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> transformers <span class="im">import</span> AutoTokenizer</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> transformers <span class="im">import</span> AutoModelForSequenceClassification</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>:::</p>
-<p>::: {.cell 0=‘e’ 1=‘x’ 2=‘p’ 3=‘o’ 4=‘r’ 5=‘t’}</p>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> SentimentPipeline:</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, model_name):</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">        Sentiment Analysis pipeline.</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">        """</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.model_name <span class="op">=</span> model_name</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.config <span class="op">=</span> AutoConfig.from_pretrained(<span class="va">self</span>.model_name)</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.tokenizer <span class="op">=</span> AutoTokenizer.from_pretrained(<span class="va">self</span>.model_name)</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.model <span class="op">=</span> AutoModelForSequenceClassification.from_pretrained(<span class="va">self</span>.model_name)</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> preprocess(<span class="va">self</span>, text: <span class="bu">str</span>):</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co">        Sends `text` through the LLM's tokenizer.  </span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co">        The tokenizers turns words and characters into special inputs for the LLM.</span></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co">        """</span></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>        tokenized_inputs <span class="op">=</span> <span class="va">self</span>.tokenizer(text, return_tensors<span class="op">=</span><span class="st">'pt'</span>)</span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> tokenized_inputs</span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> forward(<span class="va">self</span>, text: <span class="bu">str</span>):</span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""</span></span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="co">        First we preprocess the `text` into tokens.</span></span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="co">        Then we send the `token_inputs` to the model.</span></span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="co">        """</span></span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>        token_inputs <span class="op">=</span> <span class="va">self</span>.preprocess(text)</span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>        outputs <span class="op">=</span> <span class="va">self</span>.model(<span class="op">**</span>token_inputs)</span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> outputs</span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> process_outputs(<span class="va">self</span>, outs):</span>
-<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""</span></span>
-<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a><span class="co">        Here is where HuggingFace does the most for us via `pipeline`.  </span></span>
-<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a><span class="co">        """</span></span>
-<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>        <span class="co"># grab the raw "scores" that from the model for Positive and Negative labels</span></span>
-<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>        logits <span class="op">=</span> outs.logits</span>
-<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>        <span class="co"># find the strongest label score, aka the model's decision</span></span>
-<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>        pred_idx <span class="op">=</span> logits.argmax(<span class="dv">1</span>).item()</span>
-<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>        <span class="co"># use the `config` object to find the class label</span></span>
-<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>        pred_label <span class="op">=</span> <span class="va">self</span>.config.id2label[pred_idx]  </span>
-<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>        <span class="co"># calculate the human-readable number for the score</span></span>
-<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>        pred_score <span class="op">=</span> logits.softmax(<span class="op">-</span><span class="dv">1</span>)[:, pred_idx].item()</span>
-<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> {</span>
-<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>            <span class="st">'label'</span>: pred_label,</span>
-<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a>            <span class="st">'score'</span>: pred_score, </span>
-<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>        }</span>
-<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__call__</span>(<span class="va">self</span>, text: <span class="bu">str</span>):</span>
-<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a>        model_outs <span class="op">=</span> <span class="va">self</span>.forward(text)</span>
-<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a>        preds <span class="op">=</span> <span class="va">self</span>.process_outputs(model_outs)</span>
-<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> preds</span>
-<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__repr__</span>(<span class="va">self</span>):</span>
-<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f"SentimentAnalysis_</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>model_name<span class="sc">}</span><span class="ss">"</span></span>
-<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>:::</p>
+<p>You can think of the cell above as a unit test for the <code>SentimentAnalysis</code> pipeline. <code>nbdev</code> runs this notebook when it compiles the library, and if the tests fail then the build fails. This is a great, built-in way of making sure that the library works as expected.</p>
+</section>
+<section id="exporting-the-library" class="level3">
+<h3 class="anchored" data-anchor-id="exporting-the-library">Exporting the library</h3>
+<p>We can now export the library using the <code>nbdev_build_lib</code> command. This will create a file inside of the top-level library folder <code>Fractal_LLM_Course</code>. Per the <code>default_exp</code> directive, the file will called <code>lesson_2/simple_pipeline.py</code>.</p>
+<blockquote class="blockquote">
+<p>Note: we can add nested library directories with the typical python dot (<code>.</code>) syntax. For example, if we’d instead used the directive <code>|# default_exp simple_pipeline</code>, then the file would live at the top-level library folder: <code>Fractal_LLM_Course/simple_pipeline.py</code>. Adding the <code>lesson_2.</code> created the <code>lesson_2/</code> folder for us.</p>
+</blockquote>
+<p>The following set of commands will:<br>
+- Export the Notebooks into a library.<br>
+- Install the library as an editable install. - Import the newly installed library in a python shell.</p>
+<p>Make sure to run them from the top-level directory of the repo.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># export Notebooks into a library</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="ex">nbdev_export_lib</span>  </span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># install the library as an editable install</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="at">-e</span> . </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Now open up a python shell to import and use the library.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># import the newly installed library </span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> Fractal_LLM_Course.lesson_2.simple_pipeline <span class="im">import</span> SentimentPipeline</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"># use our custom SentimentAnalysis pipeline!</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>model_name <span class="op">=</span> <span class="st">'distilbert-base-uncased-finetuned-sst-2-english'</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>classifier <span class="op">=</span> SentimentPipeline(model_name) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Congrats! We’ve now built and installed a full, working python library. This is just the start, <code>nbdev</code> has many other advanced tools you can <a href="https://nbdev.fast.ai/tutorials/tutorial.html#advanced-functionality">read about here</a>.</p>
+</section>
+</section>
+<section id="conclusion" class="level1">
+<h1>Conclusion</h1>
+<p>This Notebook covered two key features of <code>nbdev</code>:<br>
+- Creating a blog. - Building a python library.</p>
+<p>Both of these features are great for research and development. We can quickly try new ideas and easily share them with others.</p>
 
 
 </section>
