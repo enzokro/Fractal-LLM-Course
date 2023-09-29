@@ -3,17 +3,14 @@
 # %% auto 0
 __all__ = ['SentimentPipeline']
 
-# %% ../../nbs/02_nbdev.ipynb 37
-# cell where we import the pieces of our pipeline.
+# %% ../../nbs/02_nbdev.ipynb 43
+# importing the pieces for the pipeline
 from transformers import AutoConfig
 from transformers import AutoTokenizer
 from transformers import AutoModelForSequenceClassification
 
-# %% ../../nbs/02_nbdev.ipynb 40
+# %% ../../nbs/02_nbdev.ipynb 46
 class SentimentPipeline:
-    """
-    Docstring, inserted on the fly!
-    """
     def __init__(self, model_name):
         """
         Sentiment Analysis pipeline.
@@ -27,7 +24,7 @@ class SentimentPipeline:
     def preprocess(self, text: str):
         """
         Sends `text` through the LLM's tokenizer.  
-        The tokenizers turns words and characters into special inputs for the LLM.
+        The tokenizer turns words and characters into special inputs for the LLM.
         """
         tokenized_inputs = self.tokenizer(text, return_tensors='pt')
         return tokenized_inputs
@@ -45,31 +42,38 @@ class SentimentPipeline:
 
     def process_outputs(self, outs):
         """
-        Here is where HuggingFace does the most for us via `pipeline`.  
+        Here we mimic the post-processing that HuggingFace automatically does in its `pipeline`.  
         """
-        # grab the raw "scores" that from the model for Positive and Negative labels
+        # grab the raw scores from the model for Positive and Negative labels
         logits = outs.logits
 
         # find the strongest label score, aka the model's decision
         pred_idx = logits.argmax(1).item()
 
-        # use the `config` object to find the class label
+        # use the `config` object to find the actual class label
         pred_label = self.config.id2label[pred_idx]  
 
-        # calculate the human-readable number for the score
+        # calculate the human-readable probability score for this class
         pred_score = logits.softmax(-1)[:, pred_idx].item()
 
+        # return the predicted label and its score
         return {
             'label': pred_label,
             'score': pred_score, 
         }
     
+
     def __call__(self, text: str):
+        """
+        Overriding the call method to easily and intuitively call the pipeline.
+        """
         model_outs = self.forward(text)
         preds = self.process_outputs(model_outs)
         return preds
+
     
     def __repr__(self):
+        """
+        Cleaner representation of the pipeline.
+        """
         return f"SentimentAnalysis_{self.model_name}"
-
-
